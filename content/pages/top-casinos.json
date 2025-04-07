@@ -1,0 +1,23 @@
+{
+  "id": "top-casinos",
+  "title": "Top Casinos",
+  "slug": "top-casinos",
+  "sections": [
+    {
+      "type": "text",
+      "title": "Best Online Casinos in 2023",
+      "content": "<p>Finding the right online casino can be challenging with so many options available. We've done the hard work for you by thoroughly testing and reviewing the top platforms in the industry.</p><p>Our rankings are based on several factors including game selection, bonuses, payment methods, customer support, and overall user experience.</p>"
+    },
+    {
+      "type": "casino_list",
+      "title": "Our Top Picks",
+      "casinoIds": ["casino-1", "casino-2"]
+    },
+    {
+      "type": "text",
+      "title": "How We Rate Casinos",
+      "content": "<p>Our review process is thorough and objective, focusing on the aspects that matter most to players:</p><ul><li><strong>Game Selection:</strong> Variety and quality of games offered</li><li><strong>Bonuses:</strong> Value and fairness of promotional offers</li><li><strong>Payment Options:</strong> Variety, speed, and security of banking methods</li><li><strong>Customer Support:</strong> Availability, responsiveness, and helpfulness</li><li><strong>Security:</strong> Licensing, encryption, and fair play certifications</li></ul>"
+    }
+  ]
+}
+

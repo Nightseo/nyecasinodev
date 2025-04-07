@@ -1,0 +1,27 @@
+[
+  {
+    "id": "home",
+    "title": "Home",
+    "slug": "home",
+    "isHomepage": true
+  },
+  {
+    "id": "top-casinos",
+    "title": "Top Casinos",
+    "slug": "top-casinos",
+    "isHomepage": false
+  },
+  {
+    "id": "payment-methods",
+    "title": "Payment Methods",
+    "slug": "payment-methods",
+    "isHomepage": false
+  },
+  {
+    "id": "bonuses",
+    "title": "Casino Bonuses",
+    "slug": "bonuses",
+    "isHomepage": false
+  }
+]
+

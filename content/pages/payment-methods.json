@@ -1,0 +1,33 @@
+{
+  "id": "payment-methods",
+  "title": "Payment Methods",
+  "slug": "payment-methods",
+  "sections": [
+    {
+      "type": "text",
+      "title": "Casino Payment Methods",
+      "content": "<p>Online casinos offer various payment methods for deposits and withdrawals. Understanding the options available can help you choose the most convenient and secure method for your needs.</p>"
+    },
+    {
+      "type": "text",
+      "title": "Credit & Debit Cards",
+      "content": "<p>Credit and debit cards like Visa and Mastercard are among the most popular payment methods at online casinos. They offer instant deposits and are widely accepted.</p><p>However, some banks may block gambling transactions, and withdrawal times can be longer compared to e-wallets.</p>"
+    },
+    {
+      "type": "text",
+      "title": "E-Wallets",
+      "content": "<p>E-wallets like PayPal, Skrill, and Neteller offer fast deposits and withdrawals, with enhanced privacy since you don't share your banking details directly with the casino.</p><p>The main drawback is that some casinos exclude e-wallet deposits from welcome bonuses.</p>"
+    },
+    {
+      "type": "text",
+      "title": "Cryptocurrencies",
+      "content": "<p>Bitcoin, Ethereum, and other cryptocurrencies are gaining popularity in the online casino world. They offer anonymity, low fees, and fast transactions.</p><p>The downside is price volatility and the learning curve for new users.</p>"
+    },
+    {
+      "type": "casino_list",
+      "title": "Casinos with Multiple Payment Options",
+      "casinoIds": ["casino-1", "casino-2"]
+    }
+  ]
+}
+

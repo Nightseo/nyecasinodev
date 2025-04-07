@@ -1,0 +1,13 @@
+{
+  "id": "casino-1",
+  "name": "Royal Casino",
+  "minimumDeposit": 10,
+  "rating": 4.5,
+  "affiliateLink": "https://example.com/royal-casino",
+  "bonus": "100% up to $200",
+  "paymentMethods": ["Visa", "Mastercard", "PayPal", "Bitcoin"],
+  "pros": ["Fast withdrawals within 24 hours", "Excellent customer support", "Wide variety of games"],
+  "cons": ["Limited payment options for some countries", "High wagering requirements on bonuses"],
+  "review": "<p>Royal Casino stands out as one of the premier online gambling destinations. Established in 2010, it has built a solid reputation for reliability and fairness.</p><p>The casino offers an impressive selection of over 1,000 games from top providers like NetEnt, Microgaming, and Evolution Gaming. Their live dealer section is particularly noteworthy, providing an authentic casino experience from the comfort of your home.</p><p>New players are welcomed with a generous 100% match bonus up to $200, though the 35x wagering requirement is slightly higher than industry average.</p><p>What truly sets Royal Casino apart is their commitment to fast payouts, with most withdrawals processed within 24 hours. Their customer support team is available 24/7 via live chat, email, and phone.</p>"
+}
+

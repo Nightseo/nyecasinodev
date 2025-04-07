@@ -1,0 +1,25 @@
+[
+  {
+    "id": "casino-1",
+    "name": "Royal Casino",
+    "minimumDeposit": 10,
+    "rating": 4.5,
+    "affiliateLink": "https://example.com/royal-casino",
+    "bonus": "100% up to $200",
+    "paymentMethods": ["Visa", "Mastercard", "PayPal", "Bitcoin"],
+    "pros": ["Fast withdrawals within 24 hours", "Excellent customer support", "Wide variety of games"],
+    "cons": ["Limited payment options for some countries", "High wagering requirements on bonuses"]
+  },
+  {
+    "id": "casino-2",
+    "name": "Lucky Spins",
+    "minimumDeposit": 20,
+    "rating": 4.2,
+    "affiliateLink": "https://example.com/lucky-spins",
+    "bonus": "50 Free Spins on Sign Up",
+    "paymentMethods": ["Visa", "Mastercard", "Skrill", "Neteller"],
+    "pros": ["No deposit bonus available", "Mobile-friendly platform", "24/7 live chat support"],
+    "cons": ["Limited game selection", "Slow withdrawal process"]
+  }
+]
+
