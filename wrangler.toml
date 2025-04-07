@@ -1,0 +1,10 @@
+[build]
+command = "npm run build"
+output_dir = "out"
+
+[site]
+bucket = "out"
+
+[env.production]
+name = "nyecasinodev"
+route = "nyecasinodev.pages.dev/*" 

@@ -1,0 +1,25 @@
+Por favor, crea las siguientes imágenes para los casinos:
+
+1. lucky-star-casino.png
+   - Logo del casino
+   - Dimensiones recomendadas: 200x100 píxeles
+   - Formato: PNG con fondo transparente
+   - Ubicación: /public/images/casinos/
+
+2. lucky-star-casino-og.jpg
+   - Imagen para Open Graph
+   - Dimensiones recomendadas: 1200x630 píxeles
+   - Formato: JPG
+   - Ubicación: /public/images/casinos/
+
+3. casino-1.png
+   - Logo del primer casino (Royal Casino)
+   - Dimensiones recomendadas: 200x100 píxeles
+   - Formato: PNG con fondo transparente
+   - Ubicación: /public/images/casinos/
+
+4. casino-1-og.jpg
+   - Imagen para Open Graph del primer casino
+   - Dimensiones recomendadas: 1200x630 píxeles
+   - Formato: JPG
+   - Ubicación: /public/images/casinos/ 

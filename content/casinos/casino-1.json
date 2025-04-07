@@ -1,13 +1,32 @@
 {
   "id": "casino-1",
   "name": "Royal Casino",
+  "slug": "royal-casino",
+  "logo": "/images/casinos/royal-casino.png",
   "minimumDeposit": 10,
   "rating": 4.5,
-  "affiliateLink": "https://example.com/royal-casino",
-  "bonus": "100% up to $200",
-  "paymentMethods": ["Visa", "Mastercard", "PayPal", "Bitcoin"],
-  "pros": ["Fast withdrawals within 24 hours", "Excellent customer support", "Wide variety of games"],
-  "cons": ["Limited payment options for some countries", "High wagering requirements on bonuses"],
-  "review": "<p>Royal Casino stands out as one of the premier online gambling destinations. Established in 2010, it has built a solid reputation for reliability and fairness.</p><p>The casino offers an impressive selection of over 1,000 games from top providers like NetEnt, Microgaming, and Evolution Gaming. Their live dealer section is particularly noteworthy, providing an authentic casino experience from the comfort of your home.</p><p>New players are welcomed with a generous 100% match bonus up to $200, though the 35x wagering requirement is slightly higher than industry average.</p><p>What truly sets Royal Casino apart is their commitment to fast payouts, with most withdrawals processed within 24 hours. Their customer support team is available 24/7 via live chat, email, and phone.</p>"
+  "affiliateLink": "https://royal-casino.com/affiliate",
+  "bonus": "100% hasta 500€ en el primer depósito",
+  "paymentMethods": ["Visa", "Mastercard", "PayPal", "Skrill", "Neteller"],
+  "pros": [
+    "Gran variedad de juegos",
+    "Atención al cliente 24/7",
+    "Procesamiento rápido de pagos",
+    "Programa de fidelización"
+  ],
+  "cons": [
+    "Algunas restricciones geográficas",
+    "Tiempo de retiro puede ser lento",
+    "Términos y condiciones complejos"
+  ],
+  "review": "<h2>Reseña de Royal Casino</h2><p>Royal Casino es una de las plataformas más establecidas en el mercado de casinos en línea. Con más de 10 años de experiencia, han construido una reputación sólida basada en la transparencia y el servicio al cliente.</p><h3>Juegos y Software</h3><p>La plataforma cuenta con más de 1000 juegos de los mejores proveedores de software como NetEnt, Microgaming, Play'n GO y Evolution Gaming. Los jugadores pueden disfrutar de una amplia selección de tragamonedas, juegos de mesa, video póker y juegos en vivo.</p><h3>Bonos y Promociones</h3><p>El bono de bienvenida es competitivo, ofreciendo un 100% hasta 500€ en el primer depósito. Además, tienen un programa de fidelización que recompensa a los jugadores regulares con puntos canjeables por dinero en efectivo y otros beneficios.</p><h3>Métodos de Pago</h3><p>Royal Casino acepta una amplia variedad de métodos de pago, incluyendo tarjetas de crédito, e-wallets y transferencias bancarias. Los depósitos suelen procesarse instantáneamente, mientras que los retiros pueden tardar entre 24 y 48 horas.</p><h3>Conclusión</h3><p>Royal Casino es una opción sólida para los jugadores que buscan una plataforma confiable con una amplia selección de juegos y un buen servicio al cliente. Aunque tiene algunas limitaciones, sus ventajas superan sus desventajas.</p>",
+  "seo": {
+    "metaTitle": "Royal Casino - Reseña Completa 2023",
+    "metaDescription": "Descubre todo lo que necesitas saber sobre Royal Casino: bonos, juegos, métodos de pago, pros y contras. Reseña detallada y opinión de expertos.",
+    "keywords": "Royal Casino, reseña, casino en línea, bonos, juegos, métodos de pago",
+    "ogImage": "/images/casinos/royal-casino-og.jpg",
+    "noIndex": false,
+    "canonicalUrl": "https://nyecasinodev.pages.dev/casinos/royal-casino"
+  }
 }
 

@@ -1,13 +1,32 @@
 {
   "id": "casino-2",
-  "name": "Lucky Spins",
+  "name": "Lucky Star Casino",
+  "slug": "lucky-star-casino",
+  "logo": "/images/casinos/lucky-star-casino.png",
   "minimumDeposit": 20,
   "rating": 4.2,
-  "affiliateLink": "https://example.com/lucky-spins",
-  "bonus": "50 Free Spins on Sign Up",
-  "paymentMethods": ["Visa", "Mastercard", "Skrill", "Neteller"],
-  "pros": ["No deposit bonus available", "Mobile-friendly platform", "24/7 live chat support"],
-  "cons": ["Limited game selection", "Slow withdrawal process"],
-  "review": "<p>Lucky Spins Casino has quickly become a favorite among slot enthusiasts since its launch in 2018. The platform focuses primarily on providing a seamless slot gaming experience with over 500 titles from providers like Pragmatic Play and Play'n GO.</p><p>What makes Lucky Spins stand out is their no-deposit welcome offer of 50 free spins, allowing players to try the platform risk-free. However, be aware that these come with a 40x wagering requirement.</p><p>The casino's mobile experience deserves special mention, with a responsive design that works flawlessly across all devices. Their customer support team is available 24/7 via live chat, though email responses can take up to 24 hours.</p><p>The main drawbacks include a somewhat limited selection of table games and a withdrawal process that can take 2-3 business days to complete.</p>"
+  "affiliateLink": "https://lucky-star-casino.com/affiliate",
+  "bonus": "200% hasta 200€ + 50 giros gratis",
+  "paymentMethods": ["Visa", "Mastercard", "PayPal", "Skrill", "Bitcoin", "Ethereum"],
+  "pros": [
+    "Bonos generosos",
+    "Acepta criptomonedas",
+    "Juegos exclusivos",
+    "App móvil disponible"
+  ],
+  "cons": [
+    "Depósito mínimo más alto",
+    "Soporte técnico limitado",
+    "Algunos juegos no disponibles en móvil"
+  ],
+  "review": "<h2>Reseña de Lucky Star Casino</h2><p>Lucky Star Casino es una plataforma moderna que ha ganado popularidad rápidamente gracias a su enfoque innovador y sus generosos bonos. Fundado en 2018, ha logrado establecerse como una opción atractiva para los jugadores que buscan algo diferente.</p><h3>Juegos y Software</h3><p>La plataforma ofrece más de 800 juegos de proveedores de renombre como Pragmatic Play, Quickspin, Yggdrasil y Red Tiger. Además, tienen una sección exclusiva con juegos desarrollados internamente que no se encuentran en otros casinos.</p><h3>Bonos y Promociones</h3><p>El bono de bienvenida es uno de los más generosos del mercado, ofreciendo un 200% hasta 200€ más 50 giros gratis. También tienen un programa de recompensas diarias y torneos semanales con premios atractivos.</p><h3>Métodos de Pago</h3><p>Lucky Star Casino se destaca por aceptar una amplia variedad de métodos de pago, incluyendo criptomonedas como Bitcoin y Ethereum. Los depósitos y retiros con criptomonedas suelen procesarse en minutos, mientras que los métodos tradicionales pueden tardar hasta 48 horas.</p><h3>Conclusión</h3><p>Lucky Star Casino es una excelente opción para los jugadores que buscan bonos generosos y una experiencia moderna. Su aceptación de criptomonedas y sus juegos exclusivos lo hacen destacar en un mercado competitivo.</p>",
+  "seo": {
+    "metaTitle": "Lucky Star Casino - Reseña Completa 2023",
+    "metaDescription": "Descubre todo lo que necesitas saber sobre Lucky Star Casino: bonos, juegos, métodos de pago, pros y contras. Reseña detallada y opinión de expertos.",
+    "keywords": "Lucky Star Casino, reseña, casino en línea, bonos, juegos, criptomonedas",
+    "ogImage": "/images/casinos/lucky-star-casino-og.jpg",
+    "noIndex": false,
+    "canonicalUrl": "https://nyecasinodev.pages.dev/casinos/lucky-star-casino"
+  }
 }
 

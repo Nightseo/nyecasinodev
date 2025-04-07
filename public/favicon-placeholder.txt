@@ -1,0 +1,5 @@
+Por favor, crea el siguiente archivo para el favicon del sitio:
+
+1. favicon.ico - Un favicon en formato ICO
+
+Este archivo es necesario para el favicon del sitio y debe colocarse en el directorio /public. 

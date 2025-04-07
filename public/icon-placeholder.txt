@@ -1,0 +1,6 @@
+Por favor, crea los siguientes archivos de iconos para la PWA:
+
+1. icon-192x192.png - Un icono de 192x192 píxeles
+2. icon-512x512.png - Un icono de 512x512 píxeles
+
+Estos iconos son necesarios para la experiencia de PWA y deben colocarse en el directorio /public. 

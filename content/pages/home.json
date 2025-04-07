@@ -1,0 +1,33 @@
+{
+  "id": "home",
+  "title": "NYE Casino - Reseñas de Casinos",
+  "slug": "home",
+  "isHomepage": true,
+  "sections": [
+    {
+      "type": "text",
+      "title": "Bienvenido a NYE Casino",
+      "content": "<p>Descubre las mejores reseñas de casinos en línea, con opiniones de expertos y comparativas detalladas para ayudarte a elegir el casino perfecto para ti.</p>"
+    },
+    {
+      "type": "casino_list",
+      "title": "Casinos Destacados",
+      "casinoIds": ["casino-1", "casino-2"]
+    },
+    {
+      "type": "expert_opinion",
+      "title": "¿Qué buscar en un buen casino?",
+      "expertName": "Dr. Juan Pérez",
+      "expertImage": "/images/experts/juan-perez.jpg",
+      "expertContent": "<p>Al elegir un casino en línea, es importante considerar varios factores como la reputación, las opciones de pago, los bonos ofrecidos y el soporte al cliente. Un buen casino debe tener una licencia válida, ofrecer métodos de pago seguros y tener un historial de pagos puntuales.</p>"
+    }
+  ],
+  "seo": {
+    "metaTitle": "NYE Casino - Reseñas de Casinos en Línea",
+    "metaDescription": "Descubre las mejores reseñas de casinos en línea, con opiniones de expertos y comparativas detalladas para ayudarte a elegir el casino perfecto.",
+    "keywords": "casinos en línea, reseñas de casinos, opiniones de expertos, comparativas de casinos",
+    "ogImage": "/images/og-image.jpg",
+    "noIndex": false,
+    "canonicalUrl": "https://nyecasinodev.pages.dev/"
+  }
+} 
