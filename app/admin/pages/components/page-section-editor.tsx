@@ -1,12 +1,13 @@
 "use client"
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { PlusIcon, Trash2Icon, MoveUpIcon, MoveDownIcon } from "lucide-react"
-import type { PageSection } from "@/lib/content"
-import { getAllCasinos } from "@/lib/content"
+import type { PageSection, Casino } from "@/lib/content"
+import { getAllCasinosClient } from "@/lib/content-client"
 import { MediaSelector } from "@/components/media-selector"
 
 interface PageSectionEditorProps {
@@ -14,8 +15,48 @@ interface PageSectionEditorProps {
   onChange: (sections: PageSection[]) => void
 }
 
+// Componente para la imagen del experto
+function ExpertImage({ src, alt }: { src: string; alt: string }) {
+  const [error, setError] = useState(false)
+
+  if (error) {
+    return (
+      <img
+        src="/placeholder.svg?height=80&width=80"
+        alt={alt}
+        className="object-cover rounded-full w-full h-full"
+      />
+    )
+  }
+
+  return (
+    <img
+      src={src}
+      alt={alt}
+      className="object-cover rounded-full w-full h-full"
+      onError={() => setError(true)}
+    />
+  )
+}
+
 export function PageSectionEditor({ sections, onChange }: PageSectionEditorProps) {
-  const casinos = getAllCasinos()
+  const [casinos, setCasinos] = useState<Casino[]>([])
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    async function loadCasinos() {
+      try {
+        const loadedCasinos = await getAllCasinosClient()
+        setCasinos(loadedCasinos)
+      } catch (error) {
+        console.error("Error loading casinos:", error)
+      } finally {
+        setIsLoading(false)
+      }
+    }
+
+    loadCasinos()
+  }, [])
 
   const addSection = (type: string) => {
     const newSection: PageSection = {
@@ -182,13 +223,9 @@ export function PageSectionEditor({ sections, onChange }: PageSectionEditorProps
                         <div className="mt-2 border rounded-md p-2">
                           <p className="text-sm text-muted-foreground mb-2">Image Preview:</p>
                           <div className="relative w-20 h-20 mx-auto">
-                            <img
-                              src={section.expertImage || "/placeholder.svg"}
+                            <ExpertImage
+                              src={section.expertImage}
                               alt="Expert preview"
-                              className="object-cover rounded-full w-full h-full"
-                              onError={(e) => {
-                                e.currentTarget.src = "/placeholder.svg?height=80&width=80"
-                              }}
                             />
                           </div>
                         </div>

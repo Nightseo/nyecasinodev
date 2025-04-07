@@ -1,8 +1,7 @@
 "use client"
 
 import type React from "react"
-
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -13,33 +12,67 @@ import { Textarea } from "@/components/ui/textarea"
 import { SEOFields } from "@/components/seo-fields"
 import { ImageUpload } from "@/components/image-upload"
 import { updateCasinoAction } from "../actions"
-import { getCasinoById } from "@/lib/content"
-import type { SEOMetadata } from "@/lib/content"
+import { getCasinoByIdClient } from "@/lib/content-client"
+import type { Casino, SEOMetadata } from "@/lib/content"
 
 export default function CasinoEditor({ params }: { params: { id: string } }) {
   const router = useRouter()
   const casinoId = params.id
+  const [casino, setCasino] = useState<Casino | null>(null)
+  const [isLoading, setIsLoading] = useState(true)
 
-  // Get casino data directly
-  const casino = getCasinoById(casinoId)
+  useEffect(() => {
+    async function loadCasino() {
+      try {
+        const loadedCasino = await getCasinoByIdClient(casinoId)
+        setCasino(loadedCasino)
+      } catch (error) {
+        console.error("Error loading casino:", error)
+      } finally {
+        setIsLoading(false)
+      }
+    }
+
+    loadCasino()
+  }, [casinoId])
 
   const [isSaving, setIsSaving] = useState(false)
   const [errorMessage, setErrorMessage] = useState("")
   const [formData, setFormData] = useState({
-    name: casino?.name || "",
-    slug: casino?.slug || "",
-    minimumDeposit: casino?.minimumDeposit || 0,
-    rating: casino?.rating || 0,
-    affiliateLink: casino?.affiliateLink || "",
-    bonus: casino?.bonus || "",
-    paymentMethods: casino?.paymentMethods?.join(", ") || "",
-    pros: casino?.pros?.join("\n") || "",
-    cons: casino?.cons?.join("\n") || "",
-    review: casino?.review || "",
+    name: "",
+    slug: "",
+    minimumDeposit: 0,
+    rating: 0,
+    affiliateLink: "",
+    bonus: "",
+    paymentMethods: "",
+    pros: "",
+    cons: "",
+    review: "",
   })
 
-  const [logo, setLogo] = useState<string | undefined>(casino?.logo)
-  const [seoData, setSeoData] = useState<SEOMetadata>(casino?.seo || {})
+  const [logo, setLogo] = useState<string | undefined>()
+  const [seoData, setSeoData] = useState<SEOMetadata>({})
+
+  // Update form data when casino is loaded
+  useEffect(() => {
+    if (casino) {
+      setFormData({
+        name: casino.name || "",
+        slug: casino.slug || "",
+        minimumDeposit: casino.minimumDeposit || 0,
+        rating: casino.rating || 0,
+        affiliateLink: casino.affiliateLink || "",
+        bonus: casino.bonus || "",
+        paymentMethods: casino.paymentMethods?.join(", ") || "",
+        pros: casino.pros?.join("\n") || "",
+        cons: casino.cons?.join("\n") || "",
+        review: casino.review || "",
+      })
+      setLogo(casino.logo)
+      setSeoData(casino.seo || {})
+    }
+  }, [casino])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target

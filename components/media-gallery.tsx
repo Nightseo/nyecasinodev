@@ -19,6 +19,36 @@ interface ImageFile {
   createdAt: string
 }
 
+// Componente para la imagen de la galería
+function GalleryImage({ src, alt, className, onError }: { src: string; alt: string; className?: string; onError: () => void }) {
+  const [error, setError] = useState(false)
+
+  useEffect(() => {
+    if (error) {
+      onError()
+    }
+  }, [error, onError])
+
+  if (error) {
+    return (
+      <img
+        src="/placeholder.svg"
+        alt={alt}
+        className={className}
+      />
+    )
+  }
+
+  return (
+    <img
+      src={src}
+      alt={alt}
+      className={className}
+      onError={() => setError(true)}
+    />
+  )
+}
+
 export function MediaGallery({ onSelectImage, showUpload = false }: MediaGalleryProps) {
   const [images, setImages] = useState<ImageFile[]>([])
   const [isLoading, setIsLoading] = useState(true)
@@ -139,20 +169,16 @@ export function MediaGallery({ onSelectImage, showUpload = false }: MediaGallery
               className="overflow-hidden cursor-pointer transition-all duration-200 hover:ring-2 hover:ring-[#FF4D8D]"
               onClick={() => handleSelectImage(image.url)}
             >
-              <div className="relative aspect-square bg-gray-100">
-                {imageLoadErrors[image.name] ? (
-                  <div className="w-full h-full flex items-center justify-center">
-                    <ImageIcon className="h-12 w-12 text-gray-300" />
-                  </div>
-                ) : (
-                  <img
-                    src={`${image.url}?t=${Date.now()}`}
+              <CardContent className="p-0">
+                <div className="relative aspect-square">
+                  <GalleryImage
+                    src={image.url}
                     alt={image.name}
-                    className="w-full h-full object-contain p-2"
+                    className="object-cover w-full h-full"
                     onError={() => handleImageError(image.name)}
                   />
-                )}
-              </div>
+                </div>
+              </CardContent>
               <CardContent className="p-3">
                 <div className="text-sm font-medium truncate">{image.name}</div>
                 <div className="text-xs text-gray-500">{formatFileSize(image.size)}</div>

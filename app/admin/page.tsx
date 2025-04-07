@@ -8,9 +8,10 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { deleteCasinoAction } from "./actions"
 import { deletePageAction } from "./pages/actions"
-import { getAllCasinos, getAllPages } from "@/lib/content"
+import { getAllCasinosClient, getAllPagesClient } from "@/lib/content-client"
 // Añadir el import para el icono de diagnóstico
 import { ImageIcon, SettingsIcon } from "lucide-react"
+import type { Casino, Page } from "@/lib/content"
 
 export default function AdminPage() {
   const router = useRouter()
@@ -20,30 +21,34 @@ export default function AdminPage() {
   const [isLoading, setIsLoading] = useState(true)
 
   // Initialize with empty arrays
-  const [casinos, setCasinos] = useState([])
-  const [pages, setPages] = useState([])
+  const [casinos, setCasinos] = useState<Casino[]>([])
+  const [pages, setPages] = useState<Page[]>([])
 
   // Load data safely
   useEffect(() => {
-    try {
-      const loadedCasinos = getAllCasinos()
-      setCasinos(loadedCasinos)
-    } catch (error) {
-      console.error("Error loading casinos:", error)
-      setErrorMessage("Failed to load casinos. Please check your content directory structure.")
-    }
-
-    try {
-      const loadedPages = getAllPages()
-      setPages(loadedPages)
-    } catch (error) {
-      console.error("Error loading pages:", error)
-      if (!errorMessage) {
-        setErrorMessage("Failed to load pages. Please check your content directory structure.")
+    async function loadData() {
+      try {
+        const loadedCasinos = await getAllCasinosClient()
+        setCasinos(loadedCasinos)
+      } catch (error) {
+        console.error("Error loading casinos:", error)
+        setErrorMessage("Failed to load casinos. Please check your content directory structure.")
       }
+
+      try {
+        const loadedPages = await getAllPagesClient()
+        setPages(loadedPages)
+      } catch (error) {
+        console.error("Error loading pages:", error)
+        if (!errorMessage) {
+          setErrorMessage("Failed to load pages. Please check your content directory structure.")
+        }
+      }
+
+      setIsLoading(false)
     }
 
-    setIsLoading(false)
+    loadData()
   }, [])
 
   const handleDeleteCasino = async (id: string) => {

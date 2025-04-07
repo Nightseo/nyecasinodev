@@ -1,8 +1,31 @@
+"use client"
+
+import { useState } from "react"
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { StarIcon } from "lucide-react"
 import type { Casino } from "@/lib/content"
+
+// Componente para la imagen del casino
+function CasinoImage({ src, alt }: { src: string; alt: string }) {
+  const [error, setError] = useState(false)
+
+  if (error) {
+    return (
+      <div className="text-xl font-bold text-white text-center p-2">{alt}</div>
+    )
+  }
+
+  return (
+    <img
+      src={src}
+      alt={alt}
+      className="max-h-20 max-w-20 object-contain p-1"
+      onError={() => setError(true)}
+    />
+  )
+}
 
 interface CasinoCardProps {
   casino: Casino
@@ -15,35 +38,28 @@ export function CasinoCard({ casino }: CasinoCardProps) {
   return (
     <Card className="h-full flex flex-col border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
       <CardHeader className="pb-2">
-        <div className="w-full h-24 bg-gray-50 flex items-center justify-center rounded-md mb-4">
+        <div className="w-28 h-28 bg-[#0f172a] rounded-xl flex items-center justify-center shadow-md mx-auto">
           {casino.logo ? (
-            <img
-              src={casino.logo || "/placeholder.svg"}
-              alt={`${casino.name} logo`}
-              className="max-h-20 max-w-full object-contain p-2"
-              onError={(e) => {
-                console.error("Error loading image:", casino.logo)
-                e.currentTarget.parentElement!.innerHTML = '<div class="text-gray-400 text-center">No logo</div>'
-              }}
+            <CasinoImage
+              src={casino.logo}
+              alt={casino.name}
             />
           ) : (
-            <div className="text-gray-400 text-center">No logo</div>
+            <div className="text-xl font-bold text-white text-center p-2">{casino.name}</div>
           )}
         </div>
-
-        <CardTitle className="text-xl">{casino.name}</CardTitle>
+        <CardTitle className="text-center mt-4">{casino.name}</CardTitle>
         <CardDescription>Min. Deposit: ${casino.minimumDeposit}</CardDescription>
       </CardHeader>
 
       <CardContent className="flex-grow">
-        <div className="flex items-center mb-4">
+        <div className="flex justify-center mb-4">
           {[...Array(5)].map((_, i) => (
             <StarIcon
               key={i}
-              className={`w-5 h-5 ${i < Math.round(casino.rating) ? "text-yellow-500 fill-yellow-500" : "text-gray-300"}`}
+              className={`w-5 h-5 ${i < Math.floor(casino.rating) ? "text-yellow-500 fill-yellow-500" : "text-gray-300"}`}
             />
           ))}
-          <span className="ml-2 text-sm text-gray-600">{casino.rating}/5</span>
         </div>
       </CardContent>
 

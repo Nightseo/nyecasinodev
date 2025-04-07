@@ -20,6 +20,62 @@ interface ImageFile {
   createdAt: string
 }
 
+// Componente para la imagen de la galería
+function GalleryImage({ src, alt, className, onError }: { src: string; alt: string; className?: string; onError: () => void }) {
+  const [error, setError] = useState(false)
+
+  useEffect(() => {
+    if (error) {
+      onError()
+    }
+  }, [error, onError])
+
+  if (error) {
+    return (
+      <div className="w-full h-full flex items-center justify-center">
+        <ImageIcon className="h-12 w-12 text-gray-300" />
+      </div>
+    )
+  }
+
+  return (
+    <img
+      src={src}
+      alt={alt}
+      className={className}
+      onError={() => setError(true)}
+    />
+  )
+}
+
+// Componente para la imagen seleccionada
+function SelectedImage({ src, alt, className, onError }: { src: string; alt: string; className?: string; onError: () => void }) {
+  const [error, setError] = useState(false)
+
+  useEffect(() => {
+    if (error) {
+      onError()
+    }
+  }, [error, onError])
+
+  if (error) {
+    return (
+      <div className="w-full h-full flex items-center justify-center">
+        <ImageIcon className="h-12 w-12 text-gray-300" />
+      </div>
+    )
+  }
+
+  return (
+    <img
+      src={src}
+      alt={alt}
+      className={className}
+      onError={() => setError(true)}
+    />
+  )
+}
+
 export default function MediaGallery() {
   const [activeTab, setActiveTab] = useState("gallery")
   const [isUploading, setIsUploading] = useState(false)
@@ -222,20 +278,16 @@ export default function MediaGallery() {
                   }`}
                   onClick={() => setSelectedImage(selectedImage === image.name ? null : image.name)}
                 >
-                  <div className="relative aspect-square bg-gray-100">
-                    {imageLoadErrors[image.name] ? (
-                      <div className="w-full h-full flex items-center justify-center">
-                        <ImageIcon className="h-12 w-12 text-gray-300" />
-                      </div>
-                    ) : (
-                      <img
+                  <CardContent className="p-0">
+                    <div className="relative aspect-square">
+                      <GalleryImage
                         src={`${image.url}?t=${Date.now()}`}
                         alt={image.name}
                         className="w-full h-full object-contain p-2"
                         onError={() => handleImageError(image.name)}
                       />
-                    )}
-                  </div>
+                    </div>
+                  </CardContent>
                   <CardContent className="p-3">
                     <div className="text-sm font-medium truncate">{image.name}</div>
                     <div className="text-xs text-gray-500">{formatFileSize(image.size)}</div>
@@ -315,18 +367,12 @@ export default function MediaGallery() {
           <div className="container mx-auto flex justify-between items-center">
             <div className="flex items-center">
               <div className="w-12 h-12 bg-gray-100 rounded overflow-hidden mr-4">
-                {imageLoadErrors[selectedImage] ? (
-                  <div className="w-full h-full flex items-center justify-center">
-                    <ImageIcon className="h-6 w-6 text-gray-300" />
-                  </div>
-                ) : (
-                  <img
-                    src={images.find((img) => img.name === selectedImage)?.url || ""}
-                    alt={selectedImage}
-                    className="w-full h-full object-contain"
-                    onError={() => handleImageError(selectedImage)}
-                  />
-                )}
+                <SelectedImage
+                  src={selectedImage}
+                  alt="Selected image"
+                  className="w-full h-full object-contain"
+                  onError={() => handleImageError(selectedImage)}
+                />
               </div>
               <div>
                 <div className="font-medium">{selectedImage}</div>
